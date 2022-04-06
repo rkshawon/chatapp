@@ -1,0 +1,29 @@
+.oldconversation{
+    flex: 1;
+}
+.conversationContainer{
+    height: 90%;
+    width: 90%;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.namepic{
+    display: flex;
+    align-items: center;
+}
+.pic{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin-right: 10px;
+}
+.onlineUser{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 2px solid rgb(30, 255, 0);
+    margin-right: 10px;
+}

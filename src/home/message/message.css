@@ -1,0 +1,53 @@
+.message{
+    flex: 3;
+}
+.messageContainer{
+    height: 95%;
+    width: 100%;
+}
+.username{
+    background-color: green;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.name{
+    margin-left: 20px;
+}
+.logout{
+    margin-right: 20px;
+}
+.messagefield{
+    height: 80%;
+    width: 100%;
+   overflow-y: scroll;
+   background-color: rgba(236, 248, 253, 0.815);
+}
+.textmessage{
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.inputfield{
+    height: 15%;
+    width: 100%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+}
+.textarea{
+    resize: none;
+}
+.button{
+    background-color: rgb(16, 165, 28);
+    color: white;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    width: 10%;
+}
