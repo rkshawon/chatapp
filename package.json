@@ -40,5 +40,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://mchat-api.herokuapp.com/api"
+  "proxy": "https://mchat-api.herokuapp.com/api/"
 }
