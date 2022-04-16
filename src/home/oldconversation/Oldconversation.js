@@ -23,7 +23,6 @@ function Oldconversation({getMgsfromOdlconversation, Con}) {
       newUser: false
     })
     socketRef.current.on("newuser",(newuser)=>{
-      //console.log(newuser);
       setNewUser(newuser)
     })
 
@@ -31,8 +30,6 @@ function Oldconversation({getMgsfromOdlconversation, Con}) {
     const getallUsers = async ()=>{
       const getalluser = await axios.get("/allusers")
       const owninfo = await axios.get("/allusers/"+user._id)
-      //console.log(owninfo.data.firstTime);
-      //setAllUsers(getalluser.data)
       getalluser.data.map( async u =>{
         const startConversation = {
           senderId: user._id,
@@ -45,12 +42,10 @@ function Oldconversation({getMgsfromOdlconversation, Con}) {
     getallUsers()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
-  //console.log(allusers?.[0]._id);
 
   useEffect(()=>{
     socketRef.current.emit("sendId",user?._id)
     socketRef.current.on("getUsers", users=>{
-      //console.log(users);
     })
   },[user])
 
@@ -63,22 +58,14 @@ function Oldconversation({getMgsfromOdlconversation, Con}) {
       return
     }
      const res = await axios.get('/conversation/'+user?._id)
-     //console.log("caaling");
      setConversation(res.data)
    }
    setInterval(getConversation, 500)
   },[user?._id])
 
   useEffect(()=>{
-    //let now = new Date().getTime()
     const getConversation = async ()=>{
-
-    // if(new Date().getTime() - now > 5000){
-    //   clearInterval(getConversation);
-    //   return
-    // }
      const res = await axios.get('/conversation/'+user?._id)
-     //console.log("caaling",  newUser);
      setConversation(res.data)
    }
    setTimeout(getConversation, 1000)
@@ -88,11 +75,9 @@ function Oldconversation({getMgsfromOdlconversation, Con}) {
   useEffect(()=>{
     const getMessage = async ()=>{
       const mgs = await axios.get("/message/"+chat?._id)
-      //console.log(chat?._id, mgs.data);
       getMgsfromOdlconversation(mgs.data)
     }
     getMessage()
-    //console.log("conversation ",conversation);
      // eslint-disable-next-line react-hooks/exhaustive-deps
   },[chat])
 

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Context } from '../context/AuthContext'
+import Login from '../login/Login'
 import './home.css'
 import Message from './message/Message'
 import Oldconversation from './oldconversation/Oldconversation'
@@ -10,11 +11,9 @@ function Home() {
   const [conversation, setConversation] = useState([])
 
   const getMessageAndC = (mgs)=>{
-    //console.log(mgs)
     setMessage(mgs)
   }
   const Con = (c)=>{
-    //console.log(c);
     setConversation(c)
   }
   
@@ -26,7 +25,7 @@ function Home() {
         <Oldconversation getMgsfromOdlconversation= {getMessageAndC} Con = {Con}/>
         <Message messageDisplay = {message} conversation = {conversation}/>
       </div>
-    </div>: <div>User is not Loged in</div>
+    </div> : <Login />
   )
 }
 

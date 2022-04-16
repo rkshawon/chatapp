@@ -13,6 +13,7 @@
 	padding: 5px;
 	margin-top: 10px;
 	background-color: red;
+	word-break: break-all;
 }
 .time{
 	margin-left: 75%;

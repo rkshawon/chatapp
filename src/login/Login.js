@@ -99,13 +99,7 @@ function Login() {
               }
             }/>
             <small >{errorMessageEmail}</small>
-            <input type = "text" placeholder='password' className='passinput' ref = {password}
-            onKeyPress = {(e)=>{
-              
-              if(e.key==="Enter")
-                console.log('called')
-              }
-            }/>
+            <input type = "text" placeholder='password' className='passinput' ref = {password}/>
             <small >{errorMessagePass}</small>
             <button className='loginBtn' onClick={handleLoginClick} >Login</button>
           <div className="createNewid">

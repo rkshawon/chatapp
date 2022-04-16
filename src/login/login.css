@@ -35,7 +35,7 @@ input,  button{
     padding: 2px 5px;
 }
 .userinput:focus, .passinput:focus{
-    border-color: rgb(22, 226, 63);
+    border-color: rgb(228, 65, 78);
 }
 .loginSection small, .small{
     margin-top: 10px;

@@ -27,7 +27,6 @@ function Message({messageDisplay, conversation}) {
   useEffect(()=>{
     socketRef.current = io("ws://localhost:9000")
     socketRef.current.on("getMessage", (data) =>{
-      //console.log('data',data);
       setArrivalMessage({
         sender: data.senderId,
         text: data.text,
@@ -37,21 +36,16 @@ function Message({messageDisplay, conversation}) {
     })
   },[])
 
-  //const senderid = singleMgs?.find(s => s.senderId === arrivalMessage?.sender)
-
   useEffect(()=>{
-    //console.log(senderid === arrivalMessage?.sender, senderid, arrivalMessage?.sender);
     arrivalMessage && arrivalMessage.recieverId === user._id && mgstoDisplay === arrivalMessage?.sender &&
     setSingleMgs([...singleMgs, arrivalMessage])
     // eslint-disable-next-line react-hooks/exhaustive-deps
 },[arrivalMessage])
 useEffect(()=>{
   const getOnscreenUserinfo = async ()=>{
-    //console.log(mgstoDisplay);
     if(mgstoDisplay){
       const onScreenUser = await axios.get('/auth/' + mgstoDisplay)
         setActiveUser(onScreenUser.data)
-        //console.log(onScreenUser.data);
     }
   }
   getOnscreenUserinfo()
@@ -65,6 +59,7 @@ useEffect(()=>{
   const reciever = conversation.members?.find(m=> m !== user._id)
 
   const sendMessage = async ()=>{
+    if(text.length > 0){
       const messageToSend = {
         conversationId: idToSend,
         senderId: user._id,
@@ -78,7 +73,7 @@ useEffect(()=>{
         await axios.post("/message", messageToSend)
         setSingleMgs([...singleMgs, messageToSend])
         setText('')
-    
+    }
   }
     useEffect(()=>{
       scrollRef?.current?.scrollIntoView()

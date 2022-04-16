@@ -40,7 +40,7 @@ input{
     margin-top: 15px;
 }
 input:focus{
-    border-color: rgb(22, 226, 63);
+    border-color: rgb(228, 65, 78);
 }
 small{
     color: red;
