@@ -55,9 +55,7 @@ useEffect(()=>{
     localStorage.clear();
     //dispatch({type: "LOGOUT"})
   }
-
   const reciever = conversation.members?.find(m=> m !== user._id)
-
   const sendMessage = async ()=>{
     if(text.length > 0){
       const messageToSend = {
