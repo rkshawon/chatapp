@@ -77,7 +77,7 @@ useEffect(()=>{
   }
     useEffect(()=>{
       scrollRef?.current?.scrollIntoView()
-    },[text])
+    },[text, arrivalMessage])
 
   return (
    

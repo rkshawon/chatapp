@@ -39,13 +39,13 @@
 	align-items: center;
 }
 .owntextmessage{
-	margin-top: 1px;
+	margin: 10px 0px;
 	width: 90%;
 	display: flex;
 	justify-content: flex-end;
 }
 .textmessage{
-	margin-top: 1px;
+	margin: 10px 0px;
 	width: 90%;
 	display: flex;
 	justify-content: flex-start;
